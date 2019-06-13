@@ -1,3 +1,4 @@
+" on windows put to %HOMEPATH%
 set nocompatible
 
 :set nu "line numbers
