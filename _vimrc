@@ -1,11 +1,12 @@
 " on windows put to %HOMEPATH%
 set nocompatible
 
-:set nu "line numbers
-:set ts=4
-:set autoindent
-:set softtabstop=4 shiftwidth=4 expandtab
+set nu "line numbers
+set ts=4
+set autoindent
+set softtabstop=4 shiftwidth=4 expandtab
 set nowrap
+set ruler
 
 filetype plugin indent on
 syntax enable
