@@ -6,6 +6,10 @@ chown -R fala:users my_dir/
 
 journalctl -u geth -f
 
+docker system prune
+
+ssh yoyo@yoyo.org -p 6969 -o ServerAliveInterval=10
+
 # netrunning
 # new arch firewall, because why wouldn't you need to remember new firewall command format every few years
 firewall-cmd --zone=public --add-port=7777/tcp --permanent
