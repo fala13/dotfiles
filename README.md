@@ -2,6 +2,7 @@
 My config files for vim, etc. Actually I now just use stock settings for most stuff and just vim mode in vs code and in chrome.
 
 # commands I like but forget:
+```
 chown -R fala:users my_dir/
 
 journalctl -u geth -f
@@ -9,12 +10,15 @@ journalctl -u geth -f
 docker system prune
 
 ssh yoyo@yoyo.org -p 6969 -o ServerAliveInterval=10
+```
 
 # netrunning
 # new arch firewall, because why wouldn't you need to remember new firewall command format every few years
+```
 firewall-cmd --zone=public --add-port=7777/tcp --permanent
 firewall-cmd --reload
 firewall-cmd --list-all
+```
 
 # get my ip
 wget -qO- https://ifconfig.me/ip
@@ -26,6 +30,7 @@ netstat -lx | grep ipc
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545
 
 # setup on aws linux
+```
 sudo yum install git -y
 
 ssh-keygen -t ed25519 -C "yoyo"
@@ -36,7 +41,9 @@ source "$HOME/.cargo/env"
 sudo yum install pkgconfig openssl-devel make glibc-devel gcc patch
 
 sudo vim /etc/yum.repos.d/grafana.repo
+```
 paste:
+```
 [grafana]
 name=grafana
 baseurl=https://packages.grafana.com/oss/rpm
@@ -46,7 +53,9 @@ gpgcheck=1
 gpgkey=https://packages.grafana.com/gpg.key
 sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-
+```
+```
 wget -q -O gpg.key https://rpm.grafana.com/gpg.key
 sudo rpm --import gpg.key
 sudo dnf install grafana-agent
+```
