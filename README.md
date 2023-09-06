@@ -24,3 +24,29 @@ netstat -lx | grep ipc
 
 # synching?
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545
+
+# setup on aws linux
+sudo yum install git -y
+
+ssh-keygen -t ed25519 -C "yoyo"
+cat ~/.ssh/id_ed25519.pub # use elsewhere
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+sudo yum install pkgconfig openssl-devel make glibc-devel gcc patch
+
+sudo vim /etc/yum.repos.d/grafana.repo
+paste:
+[grafana]
+name=grafana
+baseurl=https://packages.grafana.com/oss/rpm
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.grafana.com/gpg.key
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+
+wget -q -O gpg.key https://rpm.grafana.com/gpg.key
+sudo rpm --import gpg.key
+sudo dnf install grafana-agent
