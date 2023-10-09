@@ -10,6 +10,9 @@ journalctl -u geth -f
 docker system prune
 
 ssh yoyo@yoyo.org -p 6969 -o ServerAliveInterval=10
+
+rsync -arzv -e "ssh -i aws.pem" A B
+
 ```
 
 # netrunning
