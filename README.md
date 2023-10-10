@@ -44,6 +44,13 @@ source "$HOME/.cargo/env"
 sudo yum install pkgconfig openssl-devel make glibc-devel gcc patch
 
 sudo vim /etc/yum.repos.d/grafana.repo
+
+sudo yum update -y 
+sudo yum install docker 
+sudo service docker start 
+sudo usermod -a -G docker ec2-user
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 paste:
 ```
