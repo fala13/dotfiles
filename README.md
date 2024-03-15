@@ -21,6 +21,9 @@ rsync -arzv -e "ssh -i aws.pem" A B
 firewall-cmd --zone=public --add-port=7777/tcp --permanent
 firewall-cmd --reload
 firewall-cmd --list-all
+
+# checkz open portz
+sudo lsof -i -P -n | grep LISTEN
 ```
 
 # get my ip
