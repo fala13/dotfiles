@@ -72,3 +72,9 @@ wget -q -O gpg.key https://rpm.grafana.com/gpg.key
 sudo rpm --import gpg.key
 sudo dnf install grafana-agent
 ```
+# core dumps /var/lib/systemd/coredump https://debugging.works/blog/analyzing-linux-coredump/ https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/analyzing-a-core-dump_managing-monitoring-and-updating-the-kernel
+coredumpctl list
+
+export RUST_BACKTRACE=full
+export RUSTFLAGS=-Zsanitizer=address RUSTDOCFLAGS=-Zsanitizer=address
+cargo +nightly run -Zbuild-std  --target x86_64-unknown-linux-gnu --bin=
