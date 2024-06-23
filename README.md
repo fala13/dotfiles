@@ -34,6 +34,9 @@ netstat -lx | grep ipc
 
 # synching?
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545
+curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545 | jq '.result' | xargs printf "%d\n"
+3845441
+
 
 # setup on aws linux
 ```
