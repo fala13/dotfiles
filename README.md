@@ -13,6 +13,10 @@ ssh yoyo@yoyo.org -p 6969 -o ServerAliveInterval=10
 
 rsync -arzv -e "ssh -i aws.pem" A B
 
+ulimit -m 40971520
+ulimit -v 40971520
+ulimit -c 0
+
 ```
 
 # netrunning
