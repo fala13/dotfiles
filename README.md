@@ -17,6 +17,7 @@ ulimit -m 40971520
 ulimit -v 40971520
 ulimit -c 0
 
+aria2c -x4 -s4 https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar
 ```
 
 # netrunning
@@ -92,4 +93,9 @@ cargo +nightly run -Zbuild-std  --target x86_64-unknown-linux-gnu --bin=
 # Get a cs signatures dump:
 ```
 curl -C - -O -L https://api.openchain.xyz/signature-database/v1/export
+```
+
+# OpenZeppelin requires newer soliditity version in forge?
+```
+forge install OpenZeppelin/openzeppelin-contracts@fd81a96f01cc42ef1c9a5399364968d0e07e9e90 --no-commit 
 ```
