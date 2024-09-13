@@ -12,6 +12,7 @@ docker system prune
 ssh yoyo@yoyo.org -p 6969 -o ServerAliveInterval=10
 
 rsync -arzv -e "ssh -i aws.pem" A B
+rsync -av --inplace a/ b/
 
 ulimit -m 40971520
 ulimit -v 40971520
