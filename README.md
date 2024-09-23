@@ -24,13 +24,14 @@ aria2c -x4 -s4 https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar
 # netrunning
 # new arch firewall, because why wouldn't you need to remember new firewall command format every few years
 ```
-firewall-cmd --zone=public --add-port=7777/tcp --permanent
-firewall-cmd --reload
-firewall-cmd --list-all
+sudo firewall-cmd --zone=public --add-port=7777/tcp --permanent
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-all
 
 # checkz open portz
 sudo lsof -i -P -n | grep LISTEN
 ```
+https://www.yougetsignal.com/tools/open-ports/
 
 # get my ip
 wget -qO- https://ifconfig.me/ip
