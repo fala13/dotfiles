@@ -40,6 +40,13 @@ wget -qO- https://ifconfig.me/ip
 netstat -lx | grep ipc
 
 # synching?
+```
+# geth
+--verbiosty=2
+# op-node
+OP_NODE_LOG_LEVEL=warn
+```
+
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545
 curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545 | jq '.result' | xargs printf "%d\n"
 3845441
