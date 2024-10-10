@@ -18,7 +18,7 @@ ulimit -m 40971520
 ulimit -v 40971520
 ulimit -c 0
 
-aria2c -x4 -s4 https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar
+aria2c -x4 -s4 --retry-wait=10 -m 0 https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar
 ```
 
 # netrunning
