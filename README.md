@@ -108,3 +108,10 @@ curl -C - -O -L https://api.openchain.xyz/signature-database/v1/export
 ```
 forge install OpenZeppelin/openzeppelin-contracts@fd81a96f01cc42ef1c9a5399364968d0e07e9e90 --no-commit 
 ```
+
+# arbitrum snapshot
+```
+wget -O - https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar | tar -xv
+chown -R root:root arb1/
+```
+
