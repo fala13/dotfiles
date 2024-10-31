@@ -1,6 +1,9 @@
 # dotfiles
 My config files for vim, etc. Actually I now just use stock settings for most stuff and just vim mode in vs code and in chrome.
-
+# Rust
+```
+RUST_MIN_STACK=8388608 app
+```
 # commands I like but forget:
 ```
 chown -R fala:users my_dir/
