@@ -1,5 +1,22 @@
 # dotfiles
 My config files for vim, etc. Actually I now just use stock settings for most stuff and just vim mode in vs code and in chrome.
+
+# mdadm
+
+```
+sudo mdadm --create --verbose /dev/md2 --level=0 --raid-devices=2 --chunk=256 /dev/nvme3n1 /dev/nvme9n1
+
+sudo mdadm --detail --scan >> /etc/mdadm.conf
+
+sudo mkfs.xfs -f -d su=256k,sw=3 -l size=128m -n size=64k /dev/md0
+
+sudo mount -o noatime,logbufs=8,allocsize=64m /dev/md0 /mnt/raid
+/dev/md0  /mnt/raid  xfs  defaults,noatime,logbufs=8,allocsize=64m  0  2
+
+// clean
+sudo mdadm --zero-superblock /dev/nvme0n1
+```
+
 # Rust
 ```
 RUST_MIN_STACK=8388608 app
