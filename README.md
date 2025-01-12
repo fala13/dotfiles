@@ -1,6 +1,23 @@
 # dotfiles
 My config files for vim, etc. Actually I now just use stock settings for most stuff and just vim mode in vs code and in chrome.
 
+# GOLANG
+```
+make clean
+
+goenv local 1.20.14
+goenv global 1.20.14
+goenv shell 1.20.14
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
+make nccc_geth
+```
+
 # mdadm
 
 ```
