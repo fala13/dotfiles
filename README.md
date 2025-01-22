@@ -1,6 +1,11 @@
 # dotfiles
 My config files for vim, etc. Actually I now just use stock settings for most stuff and just vim mode in vs code and in chrome.
 
+# OOM
+# from bnb-reth gh:
+sudo sysctl -w vm.min_free_kbytes=4194304
+echo "vm.min_free_kbytes=4194304" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+
 # GOLANG
 ```
 make clean
