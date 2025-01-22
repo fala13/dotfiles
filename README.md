@@ -155,5 +155,21 @@ forge install OpenZeppelin/openzeppelin-contracts@fd81a96f01cc42ef1c9a5399364968
 ```
 wget -O - https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar | tar -xv
 chown -R root:root arb1/
+docker run --rm -it --add-host host.docker.internal:host-gateway -v /srv/arbitrum/:/home/user/.arbitrum -p 0.0.0.0:8547:8547 -p 0.0.0.0:8548:8548 offchainlabs/nitro-node:v3.2.1-d81324d --parent-chain.connection.url=$L1NODE --chain.id=42161 --http.api=net,web3,eth --http.corsdomain=* --http.addr=0.0.0.0 --http.vhosts=* --execution.rpc.classic-redirect=$REDIRECT --ws.port=8548 --ws.addr=0.0.0.0 --ws.origins=* --ipc.path=/home/user/.arbitrum/arb.ipc --ws.api=net,web3,eth,debug --node.staker.enable=false --parent-chain.blob-client.beacon-url=$BEACON --execution.caching.archive \
+        --execution.caching.database-cache 20480 \
+        --execution.caching.snapshot-cache 4000 \
+        --execution.caching.stylus-lru-cache 2560 \
+        --execution.caching.trie-clean-cache 6000 \
+        --execution.caching.trie-dirty-cache 10240 \
+        --execution.recording-database.trie-clean-cache 160 \
+        --execution.recording-database.trie-dirty-cache 10240 \
+        --execution.rpc.filter-log-cache-size 320 \
+        --init.accounts-per-sync 1000000 \
+        --init.prune-bloom-size 20480 \
+        --init.prune-trie-clean-cache 6000 \
+        --node.block-validator.batch-cache-limit 200 \
+        --node.transaction-streamer.max-broadcaster-queue-size 500000 \
+        --validation.arbitrator.execution.cached-challenge-machines 40 \
+        --validation.jit.wasm-memory-usage-limit 42949672960
 ```
 
