@@ -3,8 +3,11 @@ My config files for vim, etc. Actually I now just use stock settings for most st
 
 # OOM
 # from bnb-reth gh:
+```
 sudo sysctl -w vm.min_free_kbytes=4194304
 echo "vm.min_free_kbytes=4194304" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+screen -wipe | tail -n2 | awk '{print $1}' | xargs  screen -wipe 
+```
 
 # GOLANG
 ```
