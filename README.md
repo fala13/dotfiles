@@ -38,6 +38,9 @@ sudo mkfs.xfs -f -d su=256k,sw=4 -l size=128m -n size=64k /dev/md0
 sudo mount -o noatime,logbufs=8,discar /dev/md0 /mnt/raid
 /dev/md0  /mnt/raid  xfs  defaults,noatime,logbufs=8,discard  0  2
 
+// test
+sudo fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=test --bs=4k --iodepth=64 --size=1G --readwrite=randrw --rwmixread=75 ; sudo rm test
+
 // clean
 sudo mdadm --zero-superblock /dev/nvme0n1
 ```
