@@ -29,14 +29,14 @@ make nccc_geth
 # mdadm
 
 ```
-sudo mdadm --create --verbose /dev/md2 --level=0 --raid-devices=2 --chunk=256 /dev/nvme3n1 /dev/nvme9n1
+sudo mdadm --create --verbose /dev/md2 --level=0 --raid-devices=4 --chunk=256 /dev/nvme3n1 /dev/nvme4n1 /dev/nvme5n1  /dev/nvme6n1
 
 sudo mdadm --detail --scan >> /etc/mdadm.conf
 
-sudo mkfs.xfs -f -d su=256k,sw=3 -l size=128m -n size=64k /dev/md0
+sudo mkfs.xfs -f -d su=256k,sw=4 -l size=128m -n size=64k /dev/md0
 
-sudo mount -o noatime,logbufs=8,allocsize=64m /dev/md0 /mnt/raid
-/dev/md0  /mnt/raid  xfs  defaults,noatime,logbufs=8,allocsize=64m  0  2
+sudo mount -o noatime,logbufs=8,discar /dev/md0 /mnt/raid
+/dev/md0  /mnt/raid  xfs  defaults,noatime,logbufs=8,discard  0  2
 
 // clean
 sudo mdadm --zero-superblock /dev/nvme0n1
