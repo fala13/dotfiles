@@ -1,6 +1,11 @@
 # dotfiles
 My config files for vim, etc. Actually I now just use stock settings for most stuff and just vim mode in vs code and in chrome.
 
+# cleanup csv files
+```
+awk -F',' '$4 < 10' payloads.txtn
+sort -k5 -t, -u payloads.txt
+```
 # OOM
 # from bnb-reth gh:
 ```
