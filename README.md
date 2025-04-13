@@ -12,6 +12,7 @@ sort -k5 -t, -u payloads.txt
 sudo sysctl -w vm.min_free_kbytes=4194304
 echo "vm.min_free_kbytes=4194304" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
 screen -wipe | tail -n2 | awk '{print $1}' | xargs  screen -wipe 
+top -p $(pgrep -d, -f "foobar")
 ```
 
 # GOLANG
