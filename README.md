@@ -11,6 +11,12 @@ sort -k5 -t, -u payloads.txt
 ```
 sudo sysctl -w vm.min_free_kbytes=4194304
 echo "vm.min_free_kbytes=4194304" | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+```
+# cleanups
+```
+journalctl --since "1 days ago"
+# last boot
+journalctl -b -1
 screen -wipe | tail -n2 | awk '{print $1}' | xargs  screen -wipe 
 top -p $(pgrep -d, -f "foobar")
 ```
@@ -67,6 +73,7 @@ ssh yoyo@yoyo.org -p 6969 -o ServerAliveInterval=10
 
 rsync -arzv -e "ssh -i aws.pem" A B
 rsync -av --inplace a/ b/
+rsync -aXv --remove-source-files --info=progress2 a/ b/
 
 ulimit -m 40971520
 ulimit -v 40971520
