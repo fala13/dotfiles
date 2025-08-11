@@ -1,5 +1,9 @@
 # dotfiles
 My config files for vim, etc. Actually I now just use stock settings for most stuff and just vim mode in vs code and in chrome.
+```
+# cleanup tasks older than 1hour
+ps -eo pid,etimes,command | awk '$2>3600 && /whatsabi/ {print $1}' | xargs -r -n1 kill -TERM
+```
 
 # cleanup csv files
 ```
