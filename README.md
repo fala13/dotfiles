@@ -84,6 +84,7 @@ ulimit -v 40971520
 ulimit -c 0
 
 aria2c -x4 -s4 --retry-wait=10 -m 0 https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar
+tar -I lz4 -xf snapshot.tar.lz4 -C /bla/db/
 ```
 
 # netrunning
