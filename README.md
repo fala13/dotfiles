@@ -3,6 +3,8 @@ My config files for vim, etc. Actually I now just use stock settings for most st
 ```
 # cleanup tasks older than 1hour
 ps -eo pid,etimes,command | awk '$2>3600 && /whatsabi/ {print $1}' | xargs -r -n1 kill -TERM
+
+du -sh .[!.]* */ 2>/dev/null | sort -hr   # size of every top‑level (including hidden) dir, biggest first
 ```
 
 # cleanup csv files
