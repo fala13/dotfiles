@@ -98,6 +98,9 @@ sudo firewall-cmd --list-all
 
 # checkz open portz
 sudo lsof -i -P -n | grep LISTEN
+
+# why net slow?
+sudo jnettop --remote-aggr host 
 ```
 https://www.yougetsignal.com/tools/open-ports/
 
