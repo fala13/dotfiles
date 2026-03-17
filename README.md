@@ -27,6 +27,12 @@ screen -wipe | tail -n2 | awk '{print $1}' | xargs  screen -wipe
 top -p $(pgrep -d, -f "foobar")
 ```
 
+# git
+```
+# just override local changes with server stuff
+git checkout --theirs .
+git diff --name-only --diff-filter=U | xargs git add
+```
 # GOLANG
 ```
 make clean
@@ -105,10 +111,15 @@ sudo jnettop --remote-aggr host
 https://www.yougetsignal.com/tools/open-ports/
 
 # get my ip
+```
+curl https://ipinfo.io/ip
 wget -qO- https://ifconfig.me/ip
+```
 
 # ipc paths
+```
 netstat -lx | grep ipc
+```
 
 # synching?
 ```
@@ -117,11 +128,12 @@ netstat -lx | grep ipc
 # op-node
 OP_NODE_LOG_LEVEL=warn
 ```
-
+# curl node checks
+```
 curl -X POST --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545
 curl -s -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' -H "Content-Type: application/json" http://localhost:8545 | jq '.result' | xargs printf "%d\n"
 3845441
-
+```
 
 # setup on aws linux
 ```
@@ -161,14 +173,19 @@ sudo rpm --import gpg.key
 sudo dnf install grafana-agent
 ```
 # core dumps 
+```
 /var/lib/systemd/coredump 
 https://debugging.works/blog/analyzing-linux-coredump/ 
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/managing_monitoring_and_updating_the_kernel/analyzing-a-core-dump_managing-monitoring-and-updating-the-kernel
 coredumpctl list
+```
 
+# fancy cargo
+```
 export RUST_BACKTRACE=full
 export RUSTFLAGS=-Zsanitizer=address RUSTDOCFLAGS=-Zsanitizer=address
 cargo +nightly run -Zbuild-std  --target x86_64-unknown-linux-gnu --bin=
+```
 
 # Get a cs signatures dump:
 ```
