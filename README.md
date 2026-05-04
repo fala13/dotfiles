@@ -95,6 +95,7 @@ aria2c -x4 -s4 --retry-wait=10 -m 0 https://snapshot.arbitrum.foundation/arb1/ni
 tar -I lz4 -xf snapshot.tar.lz4 -C /bla/db/
 
 comm -23 all_set.txt bad_set.txt # = all_set - bad_set
+find ./cache/ -name "sabi*" > cached_cts.tx
 ```
 
 # netrunning
