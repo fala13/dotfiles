@@ -96,6 +96,7 @@ tar -I lz4 -xf snapshot.tar.lz4 -C /bla/db/
 
 comm -23 all_set.txt bad_set.txt # = all_set - bad_set
 find ./cache/ -name "sabi*" > cached_cts.tx
+cat cached_cts.tx | grep "sabi\.999\." |  grep -oP "0x\w+" >> all_cts_999_cached.txt
 ```
 
 # netrunning
