@@ -200,7 +200,22 @@ curl -C - -O -L https://api.openchain.xyz/signature-database/v1/export
 ```
 forge install OpenZeppelin/openzeppelin-contracts@fd81a96f01cc42ef1c9a5399364968d0e07e9e90 --no-commit 
 ```
-
+# docker
+```
+  execution:
+    mem_limit: 32g
+    memswap_limit: 32g
+    mem_reservation: 28g
+  extra_hosts:
+      - "host.docker.internal:host-gateway"
+# or
+deploy:
+      resources:
+        limits:
+          memory: 32g
+        reservations:
+          memory: 28g
+```
 # arbitrum snapshot
 ```
 wget -O - https://snapshot.arbitrum.foundation/arb1/nitro-pruned.tar | tar -xv
